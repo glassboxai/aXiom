@@ -33,23 +33,13 @@ Rather than treating all available knowledge as equally relevant, aXiom explores
 4. Make the activated knowledge available to downstream reasoning or generation components.
 5. Retain enough information about selection decisions to support inspection and evaluation.
 
-```text
-                 User task / context
-                         |
-                         v
-                Semantic interpretation
-                         |
-                         v
-                Candidate knowledge
-                         |
-                         v
-          Relevance and structure selection
-                         |
-                         v
-       Activated knowledge + available provenance
-                         |
-                         v
-               Downstream AI components
+```mermaid
+flowchart TD
+    A[User task / context] --> B[Semantic interpretation]
+    B --> C[Candidate knowledge]
+    C --> D[Relevance and structure selection]
+    D --> E[Activated knowledge + available provenance]
+    E --> F[Downstream AI components]
 ```
 
 This diagram describes the conceptual responsibilities, **not a verified implementation pipeline**. Data models, retrieval algorithms, activation policies, and interfaces will be documented when ready for release.
